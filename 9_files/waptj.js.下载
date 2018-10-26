@@ -1,0 +1,29 @@
+function init_pc_url(){
+	 var pc_url=window.location.href+'?v=pc';
+	  var replace_header='http://www.';
+	  if(pc_url.indexOf('com/baike/')!=-1){
+		  replace_header='http://baike.';
+		  pc_url=pc_url.replace('com/baike/','com/');
+	  }else if(pc_url.indexOf('com/jiemeng/')!=-1){
+		  replace_header='http://jiemeng.';
+		  pc_url=pc_url.replace('com/jiemeng/','com/');
+	  }
+	  $("#pc_version").attr('href',pc_url.replace('http://m.',replace_header));
+}
+function isWeiXin(){var ua = window.navigator.userAgent.toLowerCase();if(ua.match(/MicroMessenger/i) == 'micromessenger'){return true;}else{return false;}}
+function init_bottom_adbar(adurl){
+	 if($.cookie('bottom_ad_bar_show')==null)
+$("body").append('<div id="botpop_adbar"><a href='+adurl+' target="_blank"><img src="http://m.fututa.com/statics/images/ad/pop_sxys.jpg"/></a><div id="close_btn_div"><img id="close_bottom_bar" src="http://m.fututa.com/statics/images/ad/pop_ad_close.png" width="38" height="38" /></div></div>');
+$("#close_bottom_bar").live('click',function(e){
+		 var expiretime=new Date();
+		 expiretime.setTime(expiretime.getTime()+1800000);
+		$.cookie("bottom_ad_bar_show","1",{expires:expiretime,path:'/',domain:'fututa.com'});
+		$("#botpop_adbar").remove();$("#close_btn_div").remove();
+	 });
+}
+$(document).ready(function(e){
+	init_pc_url();
+	//var adstring="http://m.fututa.com/shengxiao/yisheng/";init_bottom_adbar(adstring);
+});
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3Fcc6e96642ae5255339e5dc4256d432cb' type='text/javascript'%3E%3C/script%3E"));
+var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan style='display:none' id='cnzz_stat_icon_4100852'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s23.cnzz.com/stat.php%3Fid%3D4100852' type='text/javascript'%3E%3C/script%3E"));

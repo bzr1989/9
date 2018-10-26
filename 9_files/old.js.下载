@@ -1,0 +1,99 @@
+function return_prepage()
+{if(window.document.referrer==""||window.document.referrer==window.location.href){window.location.href="/";}else{history.go(-1);}}
+function getMenu(str) {
+	var temp = '<li class="cd_home"><a href="/">回到首页</a></li><li class="cd_apps"><a href="http://v.fututa.cn/sxysttk/apps/sxsm/">应用大全</a></li><li class="cd_ceshi"><a href="/testapp2016/">趣测试</a></li><li class="cd_shengxiao"><a href="/shengxiao/">十二生肖</a></li><li class="cd_fengshui"><a href="/fengshui/">家居风水</a></li><li class="cd_yunshi"><a href="/shengxiao/yisheng/">一生运势</a></li><li class="cd_baike"><a href="/baike/">易学知识</a></li><li class="cd_jiemeng"><a href="http://v.fututa.cn/zgjm/">解梦大全</a></li><li class="nobr"><a>收起</a></li>';
+	str = 'cd_' + str;
+	temp = temp.replace(str, "cur");
+	document.writeln(temp);
+}
+function stepMenu() {
+	var A = $('.navs'),
+	B = $('#side_nav'),
+	C = B.find('A'),
+	E = false,
+	F = 4,
+	G = B.width();
+	A.click(function() {
+		if (!E) {
+			B.show();
+			var d = G;
+			var times = setInterval(function() {
+				d -= G / F;
+				$('#wraper,#fix_header').css('left', d - G);
+				B.css('right', -d);
+				if (d <= 0) {
+					clearInterval(times);
+					E = true;
+				}
+			},
+			3);
+		} else _hide()
+	});
+	C.eq(C.size() - 1).click(function() {
+		_hide()
+	});
+	$('body').click(function() {
+		if (E) _hide()
+	});
+	function _hide() {
+		var d = G;
+		var times = setInterval(function() {
+			d -= G / F;
+			$('#wraper,#fix_header').css('left', -d);
+			B.css('right', d - 100);
+			if (d <= 0) {
+				clearInterval(times);
+				E = false;
+				B.hide();
+			}
+		},
+		3);
+	}
+}
+var ftpos = {
+	"mb": {
+		'toppos': function() {var adstring = '';document.write(adstring);},
+		'pos1': function() {
+			//var adstring = '<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\" style=\"display:inline-block;width:320px;height:50px\" data-ad-client=\"ca-pub-1681043704482124\" data-ad-slot=\"3936543239\"></ins><script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>';
+			var adstring = '<p style="padding:0px;margin:0px;"><a href="https://j.youzan.com/QiICGY" target="_blank"><img src="http://statics.fututa.com/app/logo/redirect.gif" style="width: 100%; height: auto !important;" /></a></p>';
+			var temp='';
+			/*var kkk = Math.random() * 10;
+			if (kkk < 5) {
+				temp='<div style="margin:0px -10px;"><a href="http://www.lusui8.cn/sxysttk/sxys2017/"><img src="http://statics.givezhufu.com/images/ad/ji2017ad.gif" style="max-width: 100%;height: auto !important;"></a></div>';
+			}else{
+				temp='<div style="margin:0px -10px;"><a href="http://www.lusui8.cn/sxysttk/yisheng/"><img src="http://statics.givezhufu.com/images/ad/yisheng2017.gif" style="max-width: 100%;height: auto !important;"></a></div>';
+			}*/
+			document.write(temp);
+		},
+		'pos2': function() {
+			//var adstring = "<script async src=\"//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js\"></script><ins class=\"adsbygoogle\"     style=\"display:block\"     data-ad-client=\"ca-pub-1681043704482124\"     data-ad-slot=\"5531895233\"     data-ad-format=\"auto\"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>";
+			var temp='';
+			/*var kkk = Math.random() * 10;
+			if (kkk < 5) {
+				temp='<div style="margin:0px -10px;"><a href="http://www.lusui8.cn/sxysttk/sxys2017/"><img src="http://statics.givezhufu.com/images/ad/ji2017ad.gif" style="max-width: 100%;height: auto !important;"></a></div>';
+			}else{
+				temp='<div style="margin:0px -10px;"><a href="http://www.lusui8.cn/sxysttk/yisheng/"><img src="http://statics.givezhufu.com/images/ad/yisheng2017.gif" style="max-width: 100%;height: auto !important;"></a></div>';
+			}*/
+			//temp='<div style="margin:0px;"><a href="https://kdt.im/pX8g2r"><img src="http://statics.fututa.com/images/ad/sx2017_smdq.jpg" style="max-width: 100%;height: auto !important;"></a></div>';
+			temp+='<div class="related_read"><div class="xg_read" id="relevant_read"><ul id="rwlist"><li class="one_img" style="padding-top:0px;border-top: 0px solid;"><a href="https://h5.youzan.com/v2/feature/3KJ2HdIAfe"><p><i><img src="http://statics.fututa.com/images/ad/sx2018.jpg"></i></p><div class="read_title">紧急！2018下半年，12生肖的运势将彻底改变</div><div class="bto_info"><span class="times">2018年12生肖运势</span></div></a><div class="clear"></div></li><li class="one_img"><a href="https://kdt.im/lHOvFh"><p><i><img src="http://statics.fututa.com/images/ad/sx2018fts.jpg"></i></p><div class="read_title">2018生肖狗、龙、鸡、牛、羊有大事！赶紧看看！</div><div class="bto_info"><span class="times">2018年运势</span></div></a><div class="clear"></div></li><li class="one_img"><a href="https://kdt.im/bgfv2r"><p><i><img src="http://statics.fututa.com/images/ad/sx2017_ysys.jpg"></i></p><div class="read_title">大师免费解读你的一生运势，揭开你的命运密码！</div><div class="bto_info"><span class="times">一生运势揭秘</span></div></a><div class="clear"></div></li><li class="one_img"><a href="https://kdt.im/WXLdqr"><p><i><img src="http://statics.fututa.com/images/ad/lvshou_bmfn.jpg"></i></p><div class="read_title">99%的人都不知道，你的生肖决定了你的命运与财富运</div><div class="bto_info"><span class="times">十二生肖本命佛</span></div></a><div class="clear"></div></li></ul></div></div>';
+			
+			//var adstring='<div class="related_read"><div class="column_style">精彩推荐</div><div class="xg_read" id="relevant_read"><ul id="rwlist"><li class="one_img" style="padding-top:0px;border-top: 0px solid;"><a href="http://v.fututa.cn/sxysttk/sxys2017/"><p><i><img src="http://statics.fututa.com/images/ad/lvshou_2017ys.jpg"></i></p><div class="read_title">2017年运势精准预测！你明年运势如何？</div><div class="bto_info"><span class="times">2017年十二生肖运势</span></div></a><div class="clear"></div></li><li class="one_img"><a href="http://v.fututa.cn/sxysttk/yisheng/"><p><i><img src="http://statics.fututa.com/images/ad/lvshou_ysys.jpg"></i></p><div class="read_title">生肖绝密档案！看过的人都已经换了车了，没人肯告诉你！</div><div class="bto_info"><span class="times">生肖运势揭秘</span></div></a><div class="clear"></div></li><li class="one_img"><a href="http://v.fututa.cn/sxysttk/benmingfo/"><p><i><img src="http://statics.fututa.com/images/ad/lvshou_bmfn.jpg"></i></p><div class="read_title">99%的人都不知道，你的生肖决定了你的命运与财富运</div><div class="bto_info"><span class="times">十二生肖本命佛</span></div></a><div class="clear"></div></li></ul></div></div>';
+			document.write(temp);
+		},
+		'pos3': function() {},
+		'pos4': function() {},
+		'pos5': function() {},
+		'posbot': function() {
+			//var adstring='<div class="related_read"><div class="column_style">精彩推荐</div><div class="xg_read" id="relevant_read"><ul id="rwlist"><li class="one_img" style="padding-top:0px;border-top: 0px solid;"><a href="http://v.fututa.cn/sxysttk/yisheng/"><p><i><img src="http://statics.fututa.com/images/ad/lvshou_ysys.jpg"></i></p><div class="read_title">生肖绝密档案！看过的人都已经换了车了，没人肯告诉你！</div><div class="bto_info"><span class="times">生肖运势揭秘</span></div></a><div class="clear"></div></li><li class="one_img"><a href="http://v.fututa.cn/sxysttk/benmingfo/"><p><i><img src="http://statics.fututa.com/images/ad/lvshou_bmfn.jpg"></i></p><div class="read_title">99%的人都不知道，你的生肖决定了你的命运与财富运</div><div class="bto_info"><span class="times">十二生肖本命佛</span></div></a><div class="clear"></div></li><li class="one_img"><a href="https://h5.koudaitong.com/v2/feature/3rb3h2za"><p><i><img src="http://statics.fututa.com/images/ad/lvshou_djmf.jpg"></i></p><div class="read_title">揭秘传承千年的道家秘法，到底有多灵验？</div><div class="bto_info"><span class="times">道法自然</span></div></a><div class="clear"></div></li></ul></div></div>';
+			//document.write(adstring);
+			var adstring = '<p style="padding:0px;margin:0px;"><a href="https://j.youzan.com/QiICGY" target="_blank"><img src="http://statics.fututa.com/app/logo/redirect.gif" style="width: 100%; height: auto !important;" /></a></p>';
+			document.write(adstring);
+		}
+	}
+};
+/*jquery cookie*/
+jQuery.cookie=function(name,value,options){if(typeof value!='undefined'){options=options||{};if(value===null){value='';options.expires=-1;}
+var expires='';if(options.expires&&(typeof options.expires=='number'||options.expires.toUTCString)){var date;if(typeof options.expires=='number'){date=new Date();date.setTime(date.getTime()+(options.expires*24*60*60*1000));}else{date=options.expires;}
+expires='; expires='+date.toUTCString();}
+var path=options.path?'; path='+options.path:'';var domain=options.domain?'; domain='+options.domain:'';var secure=options.secure?'; secure':'';document.cookie=[name,'=',encodeURIComponent(value),expires,path,domain,secure].join('');}else{var cookieValue=null;if(document.cookie&&document.cookie!=''){var cookies=document.cookie.split(';');for(var i=0;i<cookies.length;i++){var cookie=jQuery.trim(cookies[i]);if(cookie.substring(0,name.length+1)==(name+'=')){cookieValue=decodeURIComponent(cookie.substring(name.length+1));break;}}}
+return cookieValue;}};
